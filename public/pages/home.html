@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/home.css">
+</head>
+<body>
+    <nav id="navbar" class="navbar">
+        <ul id="ul">
+            <li id="logo"><a href="#"></a>logo</li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Attractions</a></li>
+            <li><a href="#">Comentarios</a></li>
+        </ul>
+    </nav>
+    <main>  
+        <section id="hero">
+            <h1>Bienvenido al Parque de Atracciones</h1>
+            <p id="p">Descubre las mejores atracciones y disfruta de un día inolvidable</p>
+        </section>
+
+        <section id="attractions">
+            <h2>Gestión de Atracciones</h2>
+            
+            <!-- Formulario de Registro/Edición -->
+            <div class="form-container">
+                <form id="attraction-form">
+                    <input type="hidden" id="attraction-id">
+                    
+                    <div class="form-group">
+                        <input type="text" id="nombre" placeholder="Nombre de la atracción" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <select id="categoria" required>
+                            <option value="">Seleccione Categoría</option>
+                            <option value="Infantil">Infantil</option>
+                            <option value="Familiar">Familiar</option>
+                            <option value="Extrema">Extrema</option>
+                            <option value="Acuática">Acuática</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <select id="estado" required>
+                            <option value="Activa">Activa</option>
+                            <option value="En Mantenimiento">En Mantenimiento</option>
+                            <option value="Fuera de Servicio">Fuera de Servicio</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="number" id="altura" placeholder="Altura mín. (cm)" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" id="espera" placeholder="Tiempo espera (ej: 15 min)" required>
+                    </div>
+
+                    <button type="submit" id="btn-save">Guardar Atracción</button>
+                    <button type="button" id="btn-cancel" style="display: none;">Cancelar Edición</button>
+                </form>
+            </div>
+
+            <!-- Listado de Atracciones -->
+            <h3>Listado de Atracciones</h3>
+            <table border="1" width="100%" id="attractions-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Categoría</th>
+                        <th>Estado</th>
+                        <th>Altura Mín.</th>
+                        <th>Espera Promedio</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="attractions-list">
+                    <!-- Las filas se generarán dinámicamente aquí -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="module" src="../js/home.js"></script>
+</body>
+</html>

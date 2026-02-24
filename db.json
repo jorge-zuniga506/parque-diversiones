@@ -1,0 +1,36 @@
+{
+  "atracciones": [
+    {
+      "id": "5155",
+      "nombre": "BALAS LOCAS",
+      "categoria": "Extrema",
+      "estado": "Fuera de Servicio",
+      "altura": "140",
+      "espera": "10"
+    },
+    {
+      "nombre": "BALAS LOCAS",
+      "categoria": "Extrema",
+      "estado": "Fuera de Servicio",
+      "altura": "1",
+      "espera": "10",
+      "id": "4321"
+    },
+    {
+      "nombre": "adios",
+      "categoria": "Familiar",
+      "estado": "Activa",
+      "altura": "20",
+      "espera": "1",
+      "id": "0a56"
+    },
+    {
+      "id": "2063",
+      "nombre": "JORGE",
+      "categoria": "Acuática",
+      "estado": "Fuera de Servicio",
+      "altura": "173",
+      "espera": "1600"
+    }
+  ]
+}
