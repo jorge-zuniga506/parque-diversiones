@@ -10,6 +10,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+
    
 }
 #ul{
@@ -19,5 +20,34 @@ body{
     margin: 0;
     gap : 250px;
     align-items: center;
+    
+
+    a{
+        text-decoration: none;
+        color: aliceblue;
+    }
 
 }
+main{
+    background-color: darkgrey;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 20px;
+        
+}
+
+#hero{
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    text-align: center;
+}
+#piePagina{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
