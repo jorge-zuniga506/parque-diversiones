@@ -57,6 +57,11 @@ window.prepareEdit = async (id) => {
     inputAltura.value = attr.altura;
     inputEspera.value = attr.espera;
 
+
+    //Validaciones
+     
+
+
     // Cambiar botón
     btnSave.textContent = 'Actualizar Atracción';
     btnCancel.style.display = 'inline-block';
@@ -72,12 +77,46 @@ function resetForm() {
 // Eventos 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+
+    const nombre = inputNombre.value.trim();
+    const categoria = inputCategoria.value;
+    const estado = inputEstado.value;
+    const altura = parseFloat(inputAltura.value);
+    const espera = inputEspera.value.trim();
+
+    if (!nombre) {
+        alert('El nombre es obligatorio');
+        return;
+    }
+    if (!categoria) {
+        alert('Seleccione una categoría');
+        return;
+    }
+    if (!estado) {
+        alert('Seleccione un estado');
+        return;
+    }
+    if (isNaN(altura) || altura < 0) {
+        alert('La altura debe ser un número válido y no puede ser negativa');
+        return;
+    }
+    if (!espera) {
+        alert('El tiempo de espera es obligatorio');
+        return;
+    }
+
+    const esperaNum = parseFloat(espera);
+    if (!isNaN(esperaNum) && esperaNum < 0) {
+        alert('El tiempo de espera no puede ser negativo');
+        return;
+    }
+
     const attractionData = {
-        nombre: inputNombre.value,
-        categoria: inputCategoria.value,
-        estado: inputEstado.value,
-        altura: inputAltura.value,
-        espera: inputEspera.value
+        nombre: nombre,
+        categoria: categoria,
+        estado: estado,
+        altura: altura,
+        espera: espera
     };
 
     const id = inputId.value;
