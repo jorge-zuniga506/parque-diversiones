@@ -7,86 +7,109 @@
     <link rel="stylesheet" href="../styles/home.css">
 </head>
 <body>
-    <nav id="navbar" class="navbar">
-        <ul id="ul">
-            <li id="logo"><a href="#"></a>logo</li>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Attractions</a></li>
-            <li><a href="#">Comentarios</a></li>
-        </ul>
+    <nav id="navbar" class="navbar glass">
+        <div class="nav-container">
+            <div id="logo" class="logo">🎢 <span>Parque</span></div>
+            <ul id="ul" class="nav-links">
+                <li><a href="#" class="nav-item active">Home</a></li>
+                <li><a href="#" class="nav-item">Attractions</a></li>
+                <li><a href="#" class="nav-item">Comentarios</a></li>
+            </ul>
+        </div>
     </nav>
-    <main>  
-        <section id="hero">
-            <h1>Bienvenido al Parque de Atracciones</h1>
-            <p id="p">Descubre las mejores atracciones y disfruta de un día inolvidable</p>
+
+    <main class="content-wrapper">  
+        <section id="hero" class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="animate-up">Bienvenido al Parque de Atracciones</h1>
+                <p id="p" class="animate-up-delay">Descubre las mejores atracciones y disfruta de un día inolvidable</p>
+            </div>
         </section>
 
-        <section id="attractions">
-            <h2>Gestión de Atracciones</h2>
+        <section id="attractions" class="attractions-section">
+            <div class="section-header">
+                <h2 class="title-gradient">Gestión de Atracciones</h2>
+            </div>
             
             <!-- Formulario de Registro/Edición -->
-            <div class="form-container">
-                <form id="attraction-form">
+            <div class="form-container glass-card">
+                <form id="attraction-form" class="modern-form">
                     <input type="hidden" id="attraction-id">
                     
-                    <div class="form-group">
-                        <input type="text" id="nombre" placeholder="Nombre de la atracción" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <select id="categoria" required>
-                            <option value="">Seleccione Categoría</option>
-                            <option value="Infantil">Infantil</option>
-                            <option value="Familiar">Familiar</option>
-                            <option value="Extrema">Extrema</option>
-                            <option value="Acuática">Acuática</option>
-                        </select>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" placeholder="Nombre de la atracción" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="categoria">Categoría</label>
+                            <select id="categoria" required>
+                                <option value="">Seleccione Categoría</option>
+                                <option value="Infantil">Infantil</option>
+                                <option value="Familiar">Familiar</option>
+                                <option value="Extrema">Extrema</option>
+                                <option value="Acuática">Acuática</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="estado">Estado</label>
+                            <select id="estado" required>
+                                <option value="Activa">Activa</option>
+                                <option value="En Mantenimiento">En Mantenimiento</option>
+                                <option value="Fuera de Servicio">Fuera de Servicio</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="altura">Altura mínima (cm)</label>
+                            <input type="number" id="altura" placeholder="Ej: 120" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="espera">Tiempo de espera</label>
+                            <input type="text" id="espera" placeholder="Ej: 15 min" required>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <select id="estado" required>
-                            <option value="Activa">Activa</option>
-                            <option value="En Mantenimiento">En Mantenimiento</option>
-                            <option value="Fuera de Servicio">Fuera de Servicio</option>
-                        </select>
+                    <div class="form-actions">
+                        <button type="submit" id="btn-save" class="btn btn-primary">Guardar Atracción</button>
+                        <button type="button" id="btn-cancel" class="btn btn-secondary" style="display: none;">Cancelar Edición</button>
                     </div>
-
-                    <div class="form-group">
-                        <input type="number" id="altura" placeholder="Altura mín. (cm)" required>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" id="espera" placeholder="Tiempo espera (ej: 15 min)" required>
-                    </div>
-
-                    <button type="submit" id="btn-save">Guardar Atracción</button>
-                    <button type="button" id="btn-cancel" style="display: none;">Cancelar Edición</button>
                 </form>
             </div>
 
             <!-- Listado de Atracciones -->
-            <h3>Listado de Atracciones</h3>
-            <table border="1" width="100%" id="attractions-table">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Categoría</th>
-                        <th>Estado</th>
-                        <th>Altura Mín.</th>
-                        <th>Espera Promedio</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody id="attractions-list">
-                    <!-- Las filas se generarán dinámicamente aquí -->
-                </tbody>
-            </table>
+            <div class="list-container">
+                <h3 class="subtitle">Listado de Atracciones</h3>
+                <div class="table-responsive">
+                    <table class="modern-table" id="attractions-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Categoría</th>
+                                <th>Estado</th>
+                                <th>Altura Mín.</th>
+                                <th>Espera Promedio</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="attractions-list">
+                            <!-- Las filas se generarán dinámicamente aquí -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </section>
     </main>
-    <footer id="piePagina">
-        <h5>&copy; 2024 Parque de Atracciones. Todos los derechos reservados.</h5>
-        <br>
-        <h6>Desarrollado por JORGE ZUÑIGA</h6>
+
+    <footer id="piePagina" class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Parque de Atracciones. Todos los derechos reservados.</p>
+            <p class="developer">Desarrollado por <span class="highlight">JORGE ZUÑIGA</span></p>
+        </div>
     </footer>
 
 
